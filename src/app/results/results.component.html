@@ -1,1 +1,8 @@
-<p>results works!</p>
+<div class="results-container">
+  <p-listbox
+    *ngIf="suggestedLanguages"
+    [options]="suggestedLanguages"
+    [(ngModel)]="selectedLanguages"
+    [style]="{ width: '250px' }"
+  ></p-listbox>
+</div>

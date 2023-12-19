@@ -2,9 +2,16 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <app-form (suggestedLanguages)="onSuggestedLanguages($event)"></app-form>
+    <app-results [suggestedLanguages]="suggestedLanguages"></app-results>
+  `,
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'ISW-angular';
+  suggestedLanguages: string[] | undefined;
+
+  onSuggestedLanguages(suggestedLanguages: string[]) {
+    this.suggestedLanguages = suggestedLanguages;
+  }
 }

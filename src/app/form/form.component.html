@@ -1,1 +1,7 @@
-<p>form works!</p>
+<div class="form-container">
+    <p-dropdown [(ngModel)]="projectType" [options]="projectTypeOptions" placeholder="Select Project Type"></p-dropdown>
+    <input type="text" [(ngModel)]="requirements" pInputText placeholder="Enter Requirements">
+    <input type="text" [(ngModel)]="userExperience" pInputText placeholder="Enter User Experience">
+    <button pButton type="button" (click)="onSubmit()" label="Submit"></button>
+  </div>
+  
