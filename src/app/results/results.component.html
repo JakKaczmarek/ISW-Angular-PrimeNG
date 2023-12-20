@@ -1,8 +1,14 @@
-<div class="results-container">
+<div
+  class="results-container"
+  [ngClass]="{ visible: suggestedLanguages && suggestedLanguages.length }"
+>
+  <p *ngIf="suggestedLanguages && suggestedLanguages.length">
+    Recommended Programming Languages:
+  </p>
   <p-listbox
     *ngIf="suggestedLanguages"
     [options]="suggestedLanguages"
     [(ngModel)]="selectedLanguages"
-    [style]="{ width: '250px' }"
+    [style]="{ width: '250px', margin: '0 auto' }"
   ></p-listbox>
 </div>
