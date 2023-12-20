@@ -1,7 +1,18 @@
 <div class="form-container">
-    <p-dropdown [(ngModel)]="projectType" [options]="projectTypeOptions" placeholder="Select Project Type"></p-dropdown>
-    <input type="text" [(ngModel)]="requirements" pInputText placeholder="Enter Requirements">
-    <input type="text" [(ngModel)]="userExperience" pInputText placeholder="Enter User Experience">
-    <button pButton type="button" (click)="onSubmit()" label="Submit"></button>
-  </div>
-  
+  <p-dropdown
+    [(ngModel)]="projectType"
+    [options]="projectTypeOptions"
+    placeholder="Select Project Type"
+  ></p-dropdown>
+  <p-dropdown
+    [(ngModel)]="requirements"
+    [options]="requirementsOptions"
+    placeholder="Select Requirements"
+  ></p-dropdown>
+  <p-dropdown
+    [(ngModel)]="userExperience"
+    [options]="userExperienceOptions"
+    placeholder="Select User Experience"
+  ></p-dropdown>
+  <button pButton type="button" (click)="onSubmit()" label="Submit"></button>
+</div>

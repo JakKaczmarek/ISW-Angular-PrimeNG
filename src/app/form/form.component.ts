@@ -16,6 +16,16 @@ export class FormComponent {
     { label: 'Mobile', value: 'mobile' },
   ];
 
+  requirementsOptions: any[] = [
+    { label: 'High performance', value: 'high performance' },
+    { label: 'Scalability', value: 'scalability' },
+  ];
+
+  userExperienceOptions: any[] = [
+    { label: 'Expert', value: 'expert' },
+    { label: 'Intermediate', value: 'intermediate' },
+  ];
+
   @Output() suggestedLanguages: EventEmitter<string[]> = new EventEmitter<
     string[]
   >();
@@ -29,10 +39,9 @@ export class FormComponent {
       this.userExperience
     );
 
-    // Emituj zdarzenie z sugestiami języków
     this.suggestedLanguages.emit(suggestedLanguages);
 
-    // Wyczyść formularz po wysłaniu
+    // Czyszczenie formularza po wysłaniu
     this.clearForm();
   }
 
