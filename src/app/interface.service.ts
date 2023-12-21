@@ -18,26 +18,13 @@ export class InterfaceService {
         return this.getSuggestedMobileLanguages(requirements, userExperience);
       case 'ios':
         return this.getSuggestedIOSLanguages(requirements, userExperience);
-      case 'desktop':
-        return this.getSuggestedDesktopLanguages(requirements, userExperience);
-      case 'data-science':
-        return this.getSuggestedDataScienceLanguages(
-          requirements,
-          userExperience
-        );
-      case 'iot':
-        return this.getSuggestedIoTLanguages(requirements, userExperience);
       case 'game-dev':
         return this.getSuggestedGameDevLanguages(requirements, userExperience);
       case 'backend':
         return this.getSuggestedBackendLanguages(requirements, userExperience);
       case 'ml-ai':
-        return this.getSuggestedMLAILanguages(requirements, userExperience);
-      case 'mixed-reality':
-        return this.getSuggestedMixedRealityLanguages(
-          requirements,
-          userExperience
-        );
+        return this.getSuggestedMLAITechnologies(requirements, userExperience);
+
       default:
         return [];
     }
@@ -47,10 +34,55 @@ export class InterfaceService {
     requirements: string,
     userExperience: string
   ): string[] {
-    if (requirements === 'high performance' && userExperience === 'expert') {
-      return ['JavaScript', 'TypeScript'];
+    if (requirements === 'high performance') {
+      return this.getSuggestedWebHighPerformanceTechnologies(userExperience);
+    } else if (requirements === 'scalability') {
+      return this.getSuggestedWebScalabilityTechnologies(userExperience);
     } else {
-      return ['HTML', 'CSS', 'JavaScript', 'PHP'];
+      return this.getSuggestedWebDefaultTechnologies(userExperience);
+    }
+  }
+
+  private getSuggestedWebHighPerformanceTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Node.js'];
+      case 'Advanced':
+        return ['Node.js', 'Python'];
+      case 'Expert':
+        return ['Node.js', 'Python', 'Java', 'C#'];
+      default:
+        return [];
+    }
+  }
+
+  private getSuggestedWebScalabilityTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Node.js'];
+      case 'Advanced':
+        return ['Node.js', 'Python'];
+      case 'Expert':
+        return ['Node.js', 'Python', 'Java'];
+      default:
+        return [];
+    }
+  }
+
+  private getSuggestedWebDefaultTechnologies(userExperience: string): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['HTML', 'CSS'];
+      case 'Advanced':
+        return ['HTML', 'CSS', 'JavaScript'];
+      case 'Expert':
+        return ['HTML', 'CSS', 'JavaScript', 'Node.js'];
+      default:
+        return [];
     }
   }
 
@@ -58,10 +90,57 @@ export class InterfaceService {
     requirements: string,
     userExperience: string
   ): string[] {
-    if (requirements === 'scalability' && userExperience === 'intermediate') {
-      return ['Java', 'Kotlin'];
+    if (requirements === 'high performance') {
+      return this.getSuggestedMobileHighPerformanceTechnologies(userExperience);
+    } else if (requirements === 'scalability') {
+      return this.getSuggestedMobileScalabilityTechnologies(userExperience);
     } else {
-      return ['Kotlin', 'React Native', 'Java', 'Scala', 'Dart'];
+      return this.getSuggestedMobileDefaultTechnologies(userExperience);
+    }
+  }
+
+  private getSuggestedMobileHighPerformanceTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Kotlin', 'Java'];
+      case 'Advanced':
+        return ['Kotlin', 'Java', 'Swift'];
+      case 'Expert':
+        return ['Kotlin', 'Java', 'Swift', 'C++'];
+      default:
+        return [];
+    }
+  }
+
+  private getSuggestedMobileScalabilityTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Kotlin', 'Java'];
+      case 'Advanced':
+        return ['Kotlin', 'Java', 'React Native'];
+      case 'Expert':
+        return ['Kotlin', 'Java', 'React Native', 'Swift'];
+      default:
+        return [];
+    }
+  }
+
+  private getSuggestedMobileDefaultTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Kotlin', 'Java'];
+      case 'Advanced':
+        return ['Kotlin', 'Java', 'React Native'];
+      case 'Expert':
+        return ['Kotlin', 'Java', 'React Native', 'Swift'];
+      default:
+        return [];
     }
   }
 
@@ -69,43 +148,52 @@ export class InterfaceService {
     requirements: string,
     userExperience: string
   ): string[] {
-    if (requirements === 'ios development' && userExperience === 'expert') {
-      return ['Objective-C'];
+    if (requirements === 'high performance') {
+      return this.getSuggestedIOSHighPerformanceTechnologies(userExperience);
+    } else if (requirements === 'scalability') {
+      return this.getSuggestedIOSScalabilityTechnologies(userExperience);
     } else {
-      return ['Swift'];
+      return this.getSuggestedIOSDefaultTechnologies(userExperience);
     }
   }
 
-  private getSuggestedDesktopLanguages(
-    requirements: string,
+  private getSuggestedIOSHighPerformanceTechnologies(
     userExperience: string
   ): string[] {
-    if (requirements === 'desktop application' && userExperience === 'expert') {
-      return ['Java', 'C#'];
-    } else {
-      return ['Java', 'C#', 'Python'];
+    switch (userExperience) {
+      case 'Beginner':
+      case 'Advanced':
+        return ['Swift'];
+      case 'Expert':
+        return ['Objective-C', 'Swift'];
+      default:
+        return [];
     }
   }
 
-  private getSuggestedDataScienceLanguages(
-    requirements: string,
+  private getSuggestedIOSScalabilityTechnologies(
     userExperience: string
   ): string[] {
-    if (requirements === 'data analysis' && userExperience === 'expert') {
-      return ['Python', 'R'];
-    } else {
-      return ['Python', 'R', 'SQL'];
+    switch (userExperience) {
+      case 'Beginner':
+      case 'Advanced':
+        return ['Swift', 'Objective-C'];
+      case 'Expert':
+        return ['Swift', 'Objective-C', 'Java'];
+      default:
+        return [];
     }
   }
 
-  private getSuggestedIoTLanguages(
-    requirements: string,
-    userExperience: string
-  ): string[] {
-    if (requirements === 'iot connectivity' && userExperience === 'expert') {
-      return ['C', 'Python'];
-    } else {
-      return ['C', 'Python', 'Java'];
+  private getSuggestedIOSDefaultTechnologies(userExperience: string): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+      case 'Advanced':
+        return ['Swift'];
+      case 'Expert':
+        return ['Objective-C', 'Swift'];
+      default:
+        return [];
     }
   }
 
@@ -113,10 +201,59 @@ export class InterfaceService {
     requirements: string,
     userExperience: string
   ): string[] {
-    if (requirements === 'game development' && userExperience === 'expert') {
-      return ['Unity', 'C#'];
+    if (requirements === 'high performance') {
+      return this.getSuggestedGameDevHighPerformanceTechnologies(
+        userExperience
+      );
+    } else if (requirements === 'scalability') {
+      return this.getSuggestedGameDevScalabilityTechnologies(userExperience);
     } else {
-      return ['Unity', 'C#', 'Java'];
+      return this.getSuggestedGameDevDefaultTechnologies(userExperience);
+    }
+  }
+
+  private getSuggestedGameDevHighPerformanceTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Unity', 'C#'];
+      case 'Advanced':
+        return ['Unity', 'C#', 'Java', 'C++'];
+      case 'Expert':
+        return ['Unity', 'C#', 'Java', 'C++', 'Node.js'];
+      default:
+        return [];
+    }
+  }
+
+  private getSuggestedGameDevScalabilityTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Unity', 'C#', 'Node.js'];
+      case 'Advanced':
+        return ['Unity', 'C#', 'Java', 'Node.js'];
+      case 'Expert':
+        return ['Unity', 'C#', 'Java', 'C++', 'Node.js', 'Python'];
+      default:
+        return [];
+    }
+  }
+
+  private getSuggestedGameDevDefaultTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Unity', 'C#'];
+      case 'Advanced':
+        return ['Unity', 'C#', 'Java'];
+      case 'Expert':
+        return ['Unity', 'C#', 'Java', 'C++', 'Node.js'];
+      default:
+        return [];
     }
   }
 
@@ -124,32 +261,117 @@ export class InterfaceService {
     requirements: string,
     userExperience: string
   ): string[] {
-    if (requirements === 'backend services' && userExperience === 'expert') {
-      return ['Node.js', 'Python', 'Java'];
+    if (requirements === 'high performance') {
+      return this.getSuggestedBackendHighPerformanceTechnologies(
+        userExperience
+      );
+    } else if (requirements === 'scalability') {
+      return this.getSuggestedBackendScalabilityTechnologies(userExperience);
     } else {
-      return ['Node.js', 'Python', 'Java', 'C#'];
+      return this.getSuggestedBackendDefaultTechnologies(userExperience);
     }
   }
 
-  private getSuggestedMLAILanguages(
-    requirements: string,
+  private getSuggestedBackendHighPerformanceTechnologies(
     userExperience: string
   ): string[] {
-    if (requirements === 'machine learning' && userExperience === 'expert') {
-      return ['Python', 'TensorFlow', 'PyTorch'];
-    } else {
-      return ['Python', 'TensorFlow', 'PyTorch', 'Java'];
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Node.js', 'Python'];
+      case 'Advanced':
+        return ['Node.js', 'Python', 'Java', 'C#'];
+      case 'Expert':
+        return ['Node.js', 'Python', 'Java', 'C#', 'Go'];
+      default:
+        return [];
     }
   }
 
-  private getSuggestedMixedRealityLanguages(
+  private getSuggestedBackendScalabilityTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Node.js', 'Python'];
+      case 'Advanced':
+        return ['Node.js', 'Python', 'Java', 'Go'];
+      case 'Expert':
+        return ['Node.js', 'Python', 'Java', 'Go', 'C#'];
+      default:
+        return [];
+    }
+  }
+
+  private getSuggestedBackendDefaultTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Node.js', 'Python'];
+      case 'Advanced':
+        return ['Node.js', 'Python', 'Java', 'C#'];
+      case 'Expert':
+        return ['Node.js', 'Python', 'Java', 'C#', 'Go'];
+      default:
+        return [];
+    }
+  }
+
+  private getSuggestedMLAITechnologies(
     requirements: string,
     userExperience: string
   ): string[] {
-    if (requirements === 'ar-vr development' && userExperience === 'expert') {
-      return ['Unity', 'C#'];
+    if (requirements === 'high performance') {
+      return this.getSuggestedMLAIHighPerformanceTechnologies(userExperience);
+    } else if (requirements === 'scalability') {
+      return this.getSuggestedMLAIScalabilityTechnologies(userExperience);
     } else {
-      return ['Unity', 'C#', 'Java'];
+      return this.getSuggestedMLAIDefaultTechnologies(userExperience);
+    }
+  }
+
+  private getSuggestedMLAIHighPerformanceTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Python', 'TensorFlow'];
+      case 'Advanced':
+        return ['Python', 'TensorFlow', 'PyTorch'];
+      case 'Expert':
+        return ['Python', 'TensorFlow', 'PyTorch', 'Java'];
+      default:
+        return [];
+    }
+  }
+
+  private getSuggestedMLAIScalabilityTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Python', 'TensorFlow'];
+      case 'Advanced':
+        return ['Python', 'TensorFlow', 'PyTorch', 'Java'];
+      case 'Expert':
+        return ['Python', 'TensorFlow', 'PyTorch', 'Java', 'Go'];
+      default:
+        return [];
+    }
+  }
+
+  private getSuggestedMLAIDefaultTechnologies(
+    userExperience: string
+  ): string[] {
+    switch (userExperience) {
+      case 'Beginner':
+        return ['Python', 'TensorFlow'];
+      case 'Advanced':
+        return ['Python', 'TensorFlow', 'PyTorch', 'Java'];
+      case 'Expert':
+        return ['Python', 'TensorFlow', 'PyTorch', 'Java', 'Go'];
+      default:
+        return [];
     }
   }
 }
