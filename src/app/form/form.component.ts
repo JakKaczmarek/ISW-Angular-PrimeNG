@@ -7,6 +7,7 @@ import { InterfaceService } from '.././service/interface.service';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent {
+  // Deklaracje zmiennych przechowujących wybory użytkownika
   projectType: string = '';
   requirements: string = '';
   userExperience: string = '';
@@ -16,6 +17,7 @@ export class FormComponent {
   selectedRequirements: string = '';
   selectedUserExperience: string = '';
 
+  // Dostępne opcje dla każdego z rozwijanych pól
   projectTypeOptions: any[] = [
     { label: 'Web', value: 'web' },
     { label: 'Mobile', value: 'mobile' },
@@ -36,13 +38,16 @@ export class FormComponent {
     { label: 'Expert', value: 'Expert' },
   ];
 
+  // Wyjście dla komponentu nadrzędnego, informujące o zaproponowanych językach
   @Output() suggestedLanguages: EventEmitter<string[]> = new EventEmitter<
     string[]
   >();
 
   constructor(private inferenceService: InterfaceService) {}
 
+  // Obsługa przycisku "Submit"
   onSubmit() {
+    // Pobieranie sugerowanych języków z serwisu wnioskującego
     const suggestedLanguages = this.inferenceService.getSuggestedLanguages(
       this.projectType,
       this.requirements,
@@ -51,7 +56,7 @@ export class FormComponent {
 
     this.suggestedLanguages.emit(suggestedLanguages);
 
-    // Zapisujemy aktualne wybory
+    // Zapisywanie aktualnych wyborów
     this.selectedProjectType = this.projectType;
     this.selectedRequirements = this.requirements;
     this.selectedUserExperience = this.userExperience;
@@ -60,6 +65,7 @@ export class FormComponent {
     this.clearForm();
   }
 
+  // Czyszczenie formularza
   clearForm() {
     // Aktualizujemy wartości formularza tylko jeśli użytkownik dokonał nowego wyboru
     if (

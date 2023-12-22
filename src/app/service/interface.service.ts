@@ -6,11 +6,14 @@ import { Injectable } from '@angular/core';
 export class InterfaceService {
   constructor() {}
 
+  // Metoda pobierająca sugerowane języki na podstawie wybranych kryteriów
   getSuggestedLanguages(
     projectType: string,
     requirements: string,
     userExperience: string
   ): string[] {
+    
+    // Wybór odpowiedniej metody na podstawie typu projektu
     switch (projectType) {
       case 'web':
         return this.getSuggestedWebLanguages(requirements, userExperience);
@@ -30,10 +33,12 @@ export class InterfaceService {
     }
   }
 
+  // Metoda sugerująca języki dla projektów webowych
   private getSuggestedWebLanguages(
     requirements: string,
     userExperience: string
   ): string[] {
+    // Wybór odpowiedniej metody na podstawie wymagań
     if (requirements === 'high performance') {
       return this.getSuggestedWebHighPerformanceTechnologies(userExperience);
     } else if (requirements === 'scalability') {
@@ -43,9 +48,11 @@ export class InterfaceService {
     }
   }
 
+  // Metoda sugerująca języki dla wysokiej wydajności w projektach webowych
   private getSuggestedWebHighPerformanceTechnologies(
     userExperience: string
   ): string[] {
+    // Wybór języków na podstawie poziomu doświadczenia
     switch (userExperience) {
       case 'Beginner':
         return ['HTML', 'CSS'];
