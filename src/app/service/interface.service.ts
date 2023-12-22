@@ -50,7 +50,7 @@ export class InterfaceService {
       case 'Beginner':
         return ['HTML', 'CSS'];
       case 'Advanced':
-        return ['HTML', 'CSS', 'JavaScript'];
+        return ['HTML', 'CSS', 'JavaScript', 'TypeScript'];
       case 'Expert':
         return ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Java'];
       default:
@@ -65,7 +65,7 @@ export class InterfaceService {
       case 'Beginner':
         return ['HTML', 'CSS'];
       case 'Advanced':
-        return ['HTML', 'CSS', 'JavaScript', 'Python'];
+        return ['HTML', 'CSS', 'JavaScript', 'TypeScript'];
       case 'Expert':
         return ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Python'];
       default:
