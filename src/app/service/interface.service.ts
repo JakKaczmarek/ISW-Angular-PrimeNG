@@ -48,11 +48,11 @@ export class InterfaceService {
   ): string[] {
     switch (userExperience) {
       case 'Beginner':
-        return ['Node.js'];
+        return ['HTML', 'CSS'];
       case 'Advanced':
-        return ['Node.js', 'Python'];
+        return ['HTML', 'CSS', 'Python'];
       case 'Expert':
-        return ['Node.js', 'Python', 'Java', 'C#'];
+        return ['HTML', 'CSS', 'Python', 'Java', 'C#'];
       default:
         return [];
     }
@@ -63,11 +63,11 @@ export class InterfaceService {
   ): string[] {
     switch (userExperience) {
       case 'Beginner':
-        return ['Node.js'];
+        return ['HTML', 'CSS'];
       case 'Advanced':
-        return ['Node.js', 'Python'];
+        return ['HTML', 'CSS', 'Python'];
       case 'Expert':
-        return ['Node.js', 'Python', 'Java'];
+        return ['HTML', 'CSS', 'Python', 'Java'];
       default:
         return [];
     }
@@ -80,7 +80,7 @@ export class InterfaceService {
       case 'Advanced':
         return ['HTML', 'CSS', 'JavaScript'];
       case 'Expert':
-        return ['HTML', 'CSS', 'JavaScript', 'Node.js'];
+        return ['HTML', 'CSS', 'JavaScript', 'TypeScript'];
       default:
         return [];
     }
@@ -121,9 +121,9 @@ export class InterfaceService {
       case 'Beginner':
         return ['Kotlin', 'Java'];
       case 'Advanced':
-        return ['Kotlin', 'Java', 'React Native'];
+        return ['Kotlin', 'Java', 'JavaScript'];
       case 'Expert':
-        return ['Kotlin', 'Java', 'React Native', 'Swift'];
+        return ['Kotlin', 'Java', 'JavaScript', 'Swift'];
       default:
         return [];
     }
@@ -136,9 +136,9 @@ export class InterfaceService {
       case 'Beginner':
         return ['Kotlin', 'Java'];
       case 'Advanced':
-        return ['Kotlin', 'Java', 'React Native'];
+        return ['Kotlin', 'Java', 'JavaScript'];
       case 'Expert':
-        return ['Kotlin', 'Java', 'React Native', 'Swift'];
+        return ['Kotlin', 'Java', 'JavaScript', 'Swift'];
       default:
         return [];
     }
@@ -163,7 +163,7 @@ export class InterfaceService {
     switch (userExperience) {
       case 'Beginner':
       case 'Advanced':
-        return ['Swift'];
+        return ['Swift', 'Java'];
       case 'Expert':
         return ['Objective-C', 'Swift'];
       default:
@@ -217,11 +217,11 @@ export class InterfaceService {
   ): string[] {
     switch (userExperience) {
       case 'Beginner':
-        return ['Unity', 'C#'];
+        return ['C++', 'C#'];
       case 'Advanced':
-        return ['Unity', 'C#', 'Java', 'C++'];
+        return ['C++', 'C#', 'Java', 'C++'];
       case 'Expert':
-        return ['Unity', 'C#', 'Java', 'C++', 'Node.js'];
+        return ['C++', 'C#', 'Java', 'Swift', 'JavaScript'];
       default:
         return [];
     }
@@ -232,11 +232,11 @@ export class InterfaceService {
   ): string[] {
     switch (userExperience) {
       case 'Beginner':
-        return ['Unity', 'C#', 'Node.js'];
+        return ['C++', 'C#', 'JavaScript'];
       case 'Advanced':
-        return ['Unity', 'C#', 'Java', 'Node.js'];
+        return ['C++', 'C#', 'Java', 'JavaScript'];
       case 'Expert':
-        return ['Unity', 'C#', 'Java', 'C++', 'Node.js', 'Python'];
+        return ['C++', 'C#', 'Java', 'Python', 'JavaScript'];
       default:
         return [];
     }
@@ -247,11 +247,11 @@ export class InterfaceService {
   ): string[] {
     switch (userExperience) {
       case 'Beginner':
-        return ['Unity', 'C#'];
+        return ['C++', 'C#'];
       case 'Advanced':
-        return ['Unity', 'C#', 'Java'];
+        return ['C++', 'C#', 'Java'];
       case 'Expert':
-        return ['Unity', 'C#', 'Java', 'C++', 'Node.js'];
+        return ['C++', 'C#', 'Java', 'Python', 'JavaScript'];
       default:
         return [];
     }
@@ -277,11 +277,11 @@ export class InterfaceService {
   ): string[] {
     switch (userExperience) {
       case 'Beginner':
-        return ['Node.js', 'Python'];
+        return ['JavaScript', 'Python'];
       case 'Advanced':
-        return ['Node.js', 'Python', 'Java', 'C#'];
+        return ['JavaScript', 'Python', 'Java', 'C#'];
       case 'Expert':
-        return ['Node.js', 'Python', 'Java', 'C#', 'Go'];
+        return ['JavaScript', 'Python', 'Java', 'C#', 'Go'];
       default:
         return [];
     }
@@ -292,11 +292,11 @@ export class InterfaceService {
   ): string[] {
     switch (userExperience) {
       case 'Beginner':
-        return ['Node.js', 'Python'];
+        return ['JavaScript', 'Python'];
       case 'Advanced':
-        return ['Node.js', 'Python', 'Java', 'Go'];
+        return ['JavaScript', 'Python', 'Java', 'Go'];
       case 'Expert':
-        return ['Node.js', 'Python', 'Java', 'Go', 'C#'];
+        return ['JavaScript', 'Python', 'Java', 'Go', 'C#'];
       default:
         return [];
     }
@@ -307,11 +307,11 @@ export class InterfaceService {
   ): string[] {
     switch (userExperience) {
       case 'Beginner':
-        return ['Node.js', 'Python'];
+        return ['JavaScript', 'Python'];
       case 'Advanced':
-        return ['Node.js', 'Python', 'Java', 'C#'];
+        return ['JavaScript', 'Python', 'Java', 'C#'];
       case 'Expert':
-        return ['Node.js', 'Python', 'Java', 'C#', 'Go'];
+        return ['JavaScript', 'Python', 'Java', 'C#', 'Go'];
       default:
         return [];
     }
@@ -335,11 +335,11 @@ export class InterfaceService {
   ): string[] {
     switch (userExperience) {
       case 'Beginner':
-        return ['Python', 'TensorFlow'];
+        return ['Python', 'Java'];
       case 'Advanced':
-        return ['Python', 'TensorFlow', 'PyTorch'];
+        return ['Python', 'Java', 'Julia'];
       case 'Expert':
-        return ['Python', 'TensorFlow', 'PyTorch', 'Java'];
+        return ['Python', 'Java', 'Julia', 'JavaScript'];
       default:
         return [];
     }
@@ -350,11 +350,11 @@ export class InterfaceService {
   ): string[] {
     switch (userExperience) {
       case 'Beginner':
-        return ['Python', 'TensorFlow'];
+        return ['Python', 'Java'];
       case 'Advanced':
-        return ['Python', 'TensorFlow', 'PyTorch', 'Java'];
+        return ['Python', 'Java', 'Julia', 'JavaScript'];
       case 'Expert':
-        return ['Python', 'TensorFlow', 'PyTorch', 'Java', 'Go'];
+        return ['Python', 'Java', 'Julia', 'JavaScript', 'Go'];
       default:
         return [];
     }
@@ -365,11 +365,11 @@ export class InterfaceService {
   ): string[] {
     switch (userExperience) {
       case 'Beginner':
-        return ['Python', 'TensorFlow'];
+        return ['Python', 'Java'];
       case 'Advanced':
-        return ['Python', 'TensorFlow', 'PyTorch', 'Java'];
+        return ['Python', 'Java', 'Julia', 'JavaScript'];
       case 'Expert':
-        return ['Python', 'TensorFlow', 'PyTorch', 'Java', 'Go'];
+        return ['Python', 'Java', 'Julia', 'JavaScript', 'Go'];
       default:
         return [];
     }

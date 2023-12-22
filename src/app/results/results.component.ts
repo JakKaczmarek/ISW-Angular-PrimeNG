@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { languagesData } from '../languagesData';
 
 @Component({
@@ -6,9 +6,29 @@ import { languagesData } from '../languagesData';
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss'],
 })
-export class ResultsComponent {
+export class ResultsComponent implements OnInit, OnChanges {
   selectedLanguages: string[] = [];
   languagesData: any[] = languagesData;
 
   @Input() suggestedLanguages: string[] | undefined;
+
+  ngOnInit() {
+    this.filterLanguagesData();
+  }
+
+  ngOnChanges() {
+    this.filterLanguagesData();
+  }
+
+  filterLanguagesData() {
+    if (this.suggestedLanguages && this.suggestedLanguages.length) {
+      if (languagesData) {
+        this.languagesData = languagesData.filter(
+          (language) =>
+            this.suggestedLanguages &&
+            this.suggestedLanguages.includes(language.name)
+        );
+      }
+    }
+  }
 }
