@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { InterfaceService } from '../interface.service';
+import { InterfaceService } from '.././service/interface.service';
 
 @Component({
   selector: 'app-form',
