@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ListboxModule } from 'primeng/listbox';
+import { TableModule } from 'primeng/table';
 import { FormComponent } from './form/form.component';
 import { ResultsComponent } from './results/results.component';
 
@@ -20,6 +21,7 @@ import { ResultsComponent } from './results/results.component';
     ButtonModule,
     BrowserAnimationsModule,
     ListboxModule,
+    TableModule,
   ],
   bootstrap: [AppComponent],
 })
