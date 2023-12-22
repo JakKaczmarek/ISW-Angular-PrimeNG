@@ -11,6 +11,11 @@ export class FormComponent {
   requirements: string = '';
   userExperience: string = '';
 
+  // Dodajemy dodatkowe pola do przechowywania poprzednich wyborów
+  selectedProjectType: string = '';
+  selectedRequirements: string = '';
+  selectedUserExperience: string = '';
+
   projectTypeOptions: any[] = [
     { label: 'Web', value: 'web' },
     { label: 'Mobile', value: 'mobile' },
@@ -46,13 +51,25 @@ export class FormComponent {
 
     this.suggestedLanguages.emit(suggestedLanguages);
 
+    // Zapisujemy aktualne wybory
+    this.selectedProjectType = this.projectType;
+    this.selectedRequirements = this.requirements;
+    this.selectedUserExperience = this.userExperience;
+
     // Czyszczenie formularza po wysłaniu
     this.clearForm();
   }
 
   clearForm() {
-    this.projectType = '';
-    this.requirements = '';
-    this.userExperience = '';
+    // Aktualizujemy wartości formularza tylko jeśli użytkownik dokonał nowego wyboru
+    if (
+      this.projectType !== this.selectedProjectType ||
+      this.requirements !== this.selectedRequirements ||
+      this.userExperience !== this.selectedUserExperience
+    ) {
+      this.projectType = '';
+      this.requirements = '';
+      this.userExperience = '';
+    }
   }
 }
